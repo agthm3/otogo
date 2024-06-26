@@ -13,7 +13,7 @@
 
     <div class="header">
         <h4>Aga Kareba!</h4>
-        <h2>Yusuf Manshur</h2>
+        <h2>{{ Auth::user()->name }}</h2>
         <img src="{{ asset('asset/img/logo/logo-navbar.png') }}" alt="Logo">
     </div>
 
