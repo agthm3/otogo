@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aga Kareba!</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #008080;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        .header h4 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .header h5 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        .header img {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            max-width: 40px;
+        }
+        .destination-card {
+            background-color: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .oto-card {
+            background-color: #00a7a7;
+            color: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .oto-card-content {
+            flex-grow: 1;
+            margin-right: 1rem;
+        }
+        .oto-card img {
+            max-width: 100px;
+        }
+        .nav-bar {
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem 0;
+            border-top: 1px solid #ddd;
+        }
+        .nav-bar a {
+            color: #008080;
+            text-align: center;
+            font-size: 1.25rem;
+            display: block;
+        }
+        .nav-bar img {
+            max-width: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h4>Aga Kareba!</h4>
+        <h5>Yusuf Manshur</h5>
+        <img src="https://via.placeholder.com/40" alt="Logo">
+    </div>
+
+    <div class="container">
+        <div class="destination-card">
+            <h5>Mau Kemana Hari ini?</h5>
+            <p>Pilih destinasi kamu dibawah ini.</p>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Pintu Nol, Universitas Hasanuddin" aria-label="Destination" aria-describedby="basic-addon1">
+            </div>
+        </div>
+
+        <div class="oto-card">
+            <div class="oto-card-content">
+                <h5>OTO - F1</h5>
+                <p>Malengkeri Kampus Unhas</p>
+                <button class="btn btn-light">Pilih</button>
+            </div>
+            <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
+        </div>
+
+        <div class="oto-card">
+            <div class="oto-card-content">
+                <h5>OTO - E1</h5>
+                <p>Terminal Panakkukang Kampus Unhas</p>
+                <button class="btn btn-light">Pilih</button>
+            </div>
+            <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Profil"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Setting"></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

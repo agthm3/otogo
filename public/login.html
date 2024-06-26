@@ -22,46 +22,61 @@
             width: 100%;
             padding: 20px;
             box-sizing: border-box;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .logo {
-            max-width: 250px;
-            margin: -10  auto 10px;
-            display: block;
+        .login-container h2 {
+            color: #008097;
+            margin-bottom: 20px;
         }
-        .vehicle {
-            max-width: 200px;
-            position: absolute;
-            right: -20px;
-            top: 10px; /* Adjust as needed to position it above the button */
+        .login-container .form-group {
+            text-align: left;
+        }
+        .login-container .form-control {
+            border-radius: 8px;
         }
         .login-container .btn {
-            background-color: white;
-            color: #008097;
+            background-color: #008097;
+            color: white;
             border: none;
             border-radius: 8px;
             padding: 0.75rem 1.5rem;
             width: 100%;
-            margin-top: 150px; /* Ensure there is space between button and vehicle */
+            margin-top: 20px;
         }
         .login-container .btn:hover {
-            background-color: #f8f9fa;
+            background-color: #006666;
         }
         .login-container p {
-            margin-top: 1rem;
-            color: #f8f9fa;
+            margin-top: 20px;
+            color: #008097;
         }
         .login-container a {
-            color: #f8f9fa;
+            color: #008097;
             text-decoration: underline;
+        }
+        .logo{
+            max-width: 200px;
         }
     </style>
 </head>
 <body>
 
     <div class="login-container">
-        <img src="asset/img/logo-login.svg" alt="Logo" class="logo">
-        <img src="asset/img/otogo-login.svg" alt="Vehicle" class="vehicle">
-        <button class="btn">Masuk dengan akun yang sudah ada</button>
+        <img src="asset/img/otogo-logo-color.svg" class="logo" alt="">
+        <h2>Masuk</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan email">
+            </div>
+            <div class="form-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi">
+            </div>
+            <button type="submit" class="btn">Masuk</button>
+        </form>
         <p>Belum punya akun? <a href="#">Registrasi disini</a></p>
     </div>
 

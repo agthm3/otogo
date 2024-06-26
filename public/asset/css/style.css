@@ -1,0 +1,312 @@
+/* Global Styles */
+body {
+    background-color: #f8f9fa;
+    padding-bottom: 70px; /* Tambahkan padding bawah pada body */
+    margin: 0;
+}
+.container {
+    margin-bottom: 60px;
+}
+.header {
+    background-color: #008097;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+/* .header h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.header h5 {
+    font-size: 1.25rem;
+    margin: 0;
+} */
+
+.header h4, .header h5 {
+    text-align: left;
+    margin-left: 20px; /* Atur jarak dari tepi kiri sesuai kebutuhan */
+}
+
+.header img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    max-width: 40px;
+}
+.nav-bar {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.nav-bar a {
+    color: #008080;
+    text-align: center;
+    font-size: 1.25rem;
+    display: block;
+}
+.nav-bar img {
+    max-width: 30px;
+}
+
+/* Login Page Styles */
+body.login-body {
+    background-color: #008097;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    text-align: center;
+    color: white;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.login-container .logo {
+    max-width: 250px;
+    margin: -10  auto 10px;
+    display: block;
+}
+.login-container .vehicle {
+    max-width: 200px;
+    position: absolute;
+    right: -20px;
+    top: 10px; /* Adjust as needed to position it above the button */
+}
+.login-container .btn {
+    background-color: white;
+    color: #008097;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    margin-top: 150px; /* Ensure there is space between button and vehicle */
+}
+.login-container .btn:hover {
+    background-color: #f8f9fa;
+}
+.login-container p {
+    margin-top: 1rem;
+    color: #f8f9fa;
+}
+.login-container a {
+    color: #f8f9fa;
+    text-decoration: underline;
+}
+
+/* Detail Page Styles */
+.card-custom {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.time-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.route-card {
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.route-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.route-icons {
+    display: flex;
+    align-items: center;
+}
+.route-icons img {
+    max-width: 30px;
+    margin: 0 0.25rem;
+}
+.route-icons i {
+    margin: 0 0.25rem;
+}
+.dotted-line {
+    border-bottom: 1px dashed #ccc;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+.route-estimation .price {
+    background-color: #008080;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Detail Info Page Styles */
+.detail-card, .total-card {
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.detail-card .detail-row, .total-card .total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.detail-icons {
+    display: flex;
+    align-items: center;
+}
+.detail-icons img {
+    max-width: 30px;
+    margin: 0 0.25rem;
+}
+.detail-icons i {
+    margin: 0 0.25rem;
+}
+.total-row p {
+    margin: 0;
+}
+.total-row .title {
+    font-weight: bold;
+    color: #008097;
+}
+.total-row .price {
+    color: #28a745;
+    font-weight: bold;
+}
+.total-row .estimate {
+    color: #ff8c00;
+    font-weight: bold;
+}
+.modal-custom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: none;
+    z-index: 1050;
+    max-height: 50%;
+    overflow-y: auto;
+}
+.modal-custom .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+.modal-custom .modal-header h5 {
+    margin: 0;
+}
+.modal-custom .modal-body {
+    padding: 1rem 0;
+}
+.modal-custom .btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+.modal-custom .btn-primary {
+    background-color: #008097;
+    border: none;
+}
+.modal-custom .btn-secondary {
+    background-color: #f8f9fa;
+    border: 1px solid #008097;
+    color: #008097;
+}
+
+/* Home Page Styles */
+.destination-card {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.oto-card {
+    background-color: #008097;
+    color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.oto-card-content {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+.oto-card img {
+    max-width: 100px;
+}
+
+/* Ticket Page Styles */
+.nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin-top: 1rem;
+}
+.nav-tabs .nav-item {
+    flex: 1;
+}
+.nav-tabs .nav-link {
+    border: 1px solid #008080;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    color: #008080;
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+}
+.nav-tabs .nav-link.active {
+    background-color: #008097;
+    color: white !important;
+}
+.btn-custom {
+    background-color: #008097;
+    color: white;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 70px;
+    left: 0;
+}
+.btn-custom:hover {
+    background-color: #008097;
+}
+.ticket-card {
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
