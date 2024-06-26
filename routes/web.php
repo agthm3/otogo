@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TicketController;
+use App\Models\home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home.detail-show');
 });
+
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+
+Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
+
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+Route::get('/payment/show', [PaymentController::class, 'show'])->name('payment.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

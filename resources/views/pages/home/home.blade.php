@@ -17,7 +17,7 @@
         <div class="oto-card-content">
             <h5>OTO - F1</h5>
             <p>Malengkeri Kampus Unhas</p>
-            <button class="btn btn-light">Pilih</button>
+            <a href="{{ route('payment.index') }}"> <button class="btn btn-light">Pilih</button></a>
         </div>
         <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
     </div>
