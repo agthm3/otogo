@@ -12,8 +12,8 @@
     <div class="login-container">
         <img src="asset/img/logo-login.svg" alt="Logo" class="logo">
         <img src="asset/img/otogo-login.svg" alt="Vehicle" class="vehicle">
-        <button class="btn">Masuk dengan akun yang sudah ada</button>
-        <p>Belum punya akun? <a href="#">Registrasi disini</a></p>
+        <a href="{{ route('login') }}" class="btn text-decoration-none">Masuk dengan akun yang sudah ada</a>
+        <p>Belum punya akun? <a href="{{ route('register') }}">Registrasi disini</a></p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
