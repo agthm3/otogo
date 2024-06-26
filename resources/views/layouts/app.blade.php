@@ -6,14 +6,15 @@
     <title>Aga Kareba!</title>
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@700&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <div class="header">
         <h4>Aga Kareba!</h4>
-        <h5>Yusuf Manshur</h5>
-        <img src="asset/img/logo/logo-navbar.png" alt="Logo">
+        <h2>Yusuf Manshur</h5>
+        <img src="asset/img/logo/logo-navbar.png"  alt="Logo">
     </div>
 
     @yield('content')
