@@ -284,7 +284,7 @@ body.login-body {
     width: 100%;
 }
 .nav-tabs .nav-link.active {
-    background-color: #008097;
+    background-color: #008097 !important;
     color: white !important;
 }
 .btn-custom {
