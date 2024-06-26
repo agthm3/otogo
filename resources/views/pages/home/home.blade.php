@@ -7,7 +7,7 @@
         <p>Pilih destinasi kamu dibawah ini.</p>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt red-icon"></i></span>
             </div>
             <input type="text" class="form-control" placeholder="Pintu Nol, Universitas Hasanuddin" aria-label="Destination" aria-describedby="basic-addon1">
         </div>
