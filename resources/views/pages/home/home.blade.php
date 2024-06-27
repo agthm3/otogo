@@ -13,6 +13,11 @@
         </div>
     </div>
 
+    <div class="map-card">
+        <h5>Peta Makassar</h5>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+    </div>
+
     <div class="oto-card">
         <div class="oto-card-content">
             <h5>OTO - F1</h5>
@@ -31,4 +36,19 @@
         <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
     </div>
 </div>
+
+<script>
+    function initMap() {
+        var makassar = {lat: -5.147665, lng: 119.432732};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: makassar
+        });
+        var marker = new google.maps.Marker({
+            position: makassar,
+            map: map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vzGJ4DY0OHXua-pNShCOM7bhSJXmnuk&callback=initMap"></script>
 @endsection
