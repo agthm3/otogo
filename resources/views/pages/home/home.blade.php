@@ -14,7 +14,7 @@
     </div>
 
     <div class="map-card">
-        <h5>Peta Makassar</h5>
+        <h5>Peta Lokasi Anda</h5>
         <div id="map" style="width: 100%; height: 400px;"></div>
     </div>
 
@@ -39,8 +39,10 @@
 
 <script>
     function initMap() {
+        console.log("initMap called");
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
+                console.log("Geolocation success");
                 var userLocation = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
@@ -53,11 +55,12 @@
                     position: userLocation,
                     map: map
                 });
-            }, function() {
+            }, function(error) {
+                console.log("Geolocation error: " + error.message);
                 handleLocationError(true, map.getCenter());
             });
         } else {
-            // Browser doesn't support Geolocation
+            console.log("Browser doesn't support Geolocation");
             handleLocationError(false, map.getCenter());
         }
     }
@@ -77,5 +80,4 @@
         map.setCenter(pos);
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vzGJ4DY0OHXua-pNShCOM7bhSJXmnuk&callback=initMap"></script>
-@endsection
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vzGJ4DY0OHXua-pNShCOM7bhSJXmnuk&callback=initMap"></script> @endsection
