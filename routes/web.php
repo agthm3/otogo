@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.carter.index');
+    return view('pages.setting.panduan');
 });
 
 Route::middleware(['auth'])->group(function () {
