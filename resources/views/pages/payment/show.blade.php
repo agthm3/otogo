@@ -74,22 +74,27 @@
     </div>
 
     <button class="btn-custom" id="payBtn">SETUJU DAN BAYAR</button>
-</div>
 
-<!-- Modal -->
-<div class="modal-custom" id="paymentModal">
-    <div class="modal-header">
-        <h5>Metode Pembayaran</h5>
-        <button type="button" class="close" id="closeModal">&times;</button>
-    </div>
-    <div class="modal-body">
-        <button class="btn btn-primary">QRIS</button>
-        <button class="btn btn-primary">CASH</button>
-        <button class="btn btn-secondary" id="cancelBtn">BATAL</button>
+    <!-- Modal -->
+    <div class="modal-custom" id="paymentModal">
+        <div class="modal-header">
+            <h5>Metode Pembayaran</h5>
+            <button type="button" class="close" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <button class="btn btn-primary">QRIS</button>
+            <button class="btn btn-primary">CASH</button>
+            <button class="btn btn-secondary" id="cancelBtn">BATAL</button>
+        </div>
     </div>
 </div>
+@endsection
 
 @section('scripts')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
     $(document).ready(function() {
         $('#payBtn').click(function() {
@@ -101,5 +106,4 @@
         });
     });
 </script>
-@endsection
 @endsection

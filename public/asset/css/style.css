@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     background-color: #f8f9fa;
-    padding-bottom: 70px; /* Tambahkan padding bawah pada body */
+    padding-bottom: 70px;
     margin: 0;
 }
 .container {
@@ -17,15 +17,15 @@ body {
 
 .header h4, .header h2 {
     text-align: left;
-    margin-left: 20px; /* Atur jarak dari tepi kiri sesuai kebutuhan */
+    margin-left: 20px;
     font-family: 'Public Sans', sans-serif;
-    font-weight: 700; /* Bold weight */
+    font-weight: 700;
 }
 .header img {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    max-width: 70px; /* Perbesar ukuran logo */
+    max-width: 70px;
 }
 .nav-bar {
     background-color: white;
@@ -74,7 +74,7 @@ body.login-body {
     max-width: 200px;
     position: absolute;
     right: -20px;
-    top: 10px; /* Adjust as needed to position it above the button */
+    top: 10px;
 }
 .login-container .btn {
     background-color: white;
@@ -83,7 +83,7 @@ body.login-body {
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
     width: 100%;
-    margin-top: 150px; /* Ensure there is space between button and vehicle */
+    margin-top: 150px;
 }
 .login-container .btn:hover {
     background-color: #f8f9fa;
@@ -102,9 +102,9 @@ body.login-body {
     background-color: white;
     padding: 1rem;
     margin: 1rem 0;
-    border-radius: 8px; /* Menambahkan border-radius */
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ccc; /* Menambahkan border di semua sisi */
+    border: 1px solid #ccc;
 }
 
 .card-custom p {
@@ -324,7 +324,6 @@ body.login-body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .route-card {
     background-color: white;
     padding: 1rem;
@@ -345,17 +344,107 @@ body.login-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px; /* Atur lebar yang sama untuk semua badge */
-    height: 50px; /* Atur tinggi yang sama untuk semua badge */
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
     font-weight: bold;
     margin-right: 1rem;
     text-align: center;
-    font-size: 1.2rem; /* Ukuran font */
+    font-size: 1.2rem;
 }
 
+/* Carter */
 
-.route-card p {
-    margin: 0;
-    font-size: 1rem;
+.header-title {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #008097;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+}
+
+.tarif-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.tarif-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.tarif-header {
+    padding: 0.5rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.tarif-header img {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 80px;
+}
+
+.tarif-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.tarif-body p {
+    margin: 0.5rem 0;
+}
+
+.harga {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #008097;
+}
+
+.harga-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.carter-form {
+    margin-top: 1rem;
+}
+
+.carter-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.carter-form label {
+    font-weight: bold;
+    color: #008097;
+}
+
+.carter-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+}
+
+/* Media Query untuk Mobile */
+@media (max-width: 768px) {
+    .tarif-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .tarif-header img {
+        position: static;
+        display: block;
+        margin: 0 auto;
+        width: 90px;
+    }
 }
