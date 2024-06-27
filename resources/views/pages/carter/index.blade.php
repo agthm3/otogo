@@ -111,7 +111,7 @@
                           '\nNomor Handphone: ' + phone;
 
             // WhatsApp URL
-            var whatsappURL = 'https://wa.me/628123456789?text=' + encodeURIComponent(message);
+            var whatsappURL = 'https://wa.me/6285173231604?text=' + encodeURIComponent(message);
 
             console.log("WhatsApp URL:", whatsappURL);
 
