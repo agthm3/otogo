@@ -12,12 +12,27 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        return view('dashboard.home.index');
+    }
+    public function showJalur(){
+        return view('dashboard.jalur.index');
+    }
+    public function showPendingDriver(){
+        return view('dashboard.driver.pending');
     }
 
+    public function showAllDriver(){
+        return view('dashboard.driver.index');
+    }
+    public function showReportDriver(){
+        return view('dashboard.driver.report');
+    }
     /**
      * Show the form for creating a new resource.
      */
+    public function createJalur(){
+        return view('dashboard.jalur.create');
+    }
     public function create()
     {
         //

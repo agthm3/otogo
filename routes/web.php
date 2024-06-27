@@ -24,10 +24,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home.index');
+    return view('layouts.admin.admin-layout');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/jalur', [DashboardController::class, 'showJalur'])->name('jalur.index');
+Route::get('/jalur/create', [DashboardController::class,'createJalur'])->name('jalur.create');
+Route::get('/pending-driver',[DashboardController::class, 'showPendingDriver'])->name('pending.index');
+Route::get('/all-driver', [DashboardController::class,'showAllDriver'])->name('allDriver.index');
+Route::get('/report-driver',[DashboardController::class, 'showReportDriver'])->name('reportDriver.index');
 
 Route::get('/driver', [DriverController::class, 'index'])->name('driver.index');
 
