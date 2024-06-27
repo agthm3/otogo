@@ -13,7 +13,7 @@ class DirectionController extends Controller
      */
     public function index()
     {
-        return view('pages.direction.index');
+        return view('pages.directions.index');
     }
 
     /**
@@ -37,7 +37,7 @@ class DirectionController extends Controller
      */
     public function show(direction $direction)
     {
-        //
+        return view('pages.directions.show');
     }
 
     /**

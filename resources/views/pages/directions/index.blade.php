@@ -2,12 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="route-card">
-        <div class="route-content">
-            <span class="route-badge" style="background-color: #ff0000; color: white;">A1</span>
-            <p>Terminal Daya - Pasar Butung</p>
+    <a href="{{ route("direction.show") }}" class="text-decoration-none" style="color: black">
+        <div class="route-card">
+            <div class="route-content">
+                <span class="route-badge" style="background-color: #ff0000; color: white;">A1</span>
+                <p>Terminal Daya - Pasar Butung</p>
+            </div>
         </div>
-    </div>
+    </a>
 
     <div class="route-card">
         <div class="route-content">
