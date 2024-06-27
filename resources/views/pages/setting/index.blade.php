@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+  
+
     <div class="profile-menu">
         <a href="{{ route('account.index') }}" class="profile-menu-item">
             <div class="profile-menu-icon">
@@ -27,17 +29,17 @@
                 Pertanyaan Umum
             </div>
         </a>
-        <a href="#" onclick="document.getElementById('logout-form').submit();" class="profile-menu-item">
+        <a  >
+        <form action="{{ route('logout') }}" class="profile-menu-item" method="post">
+            @csrf
             <div class="profile-menu-icon">
                 <i class="fas fa-sign-out-alt"></i>
             </div>
             <div class="profile-menu-text">
                 Keluar Akun
             </div>
+        </form>    
         </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
-            @csrf
-        </form>
     </div>
 </div>
 @endsection
