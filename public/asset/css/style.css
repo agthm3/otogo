@@ -26,8 +26,7 @@ body {
     top: 1rem;
     right: 1rem;
     max-width: 70px; /* Perbesar ukuran logo */
-}
-.nav-bar {
+}.nav-bar {
     background-color: white;
     width: 100%;
     display: flex;
@@ -38,15 +37,28 @@ body {
     bottom: 0;
     left: 0;
 }
+
 .nav-bar a {
     color: #008080;
     text-align: center;
     font-size: 1.25rem;
     display: block;
+    text-decoration: none; /* Remove underline */
 }
+
 .nav-bar img {
     max-width: 30px;
+    display: block;
+    margin: 0 auto; /* Center the image */
 }
+
+.nav-bar span {
+    display: block;
+    font-size: 0.75rem; /* Adjust font size */
+    margin-top: 0.25rem;
+    color: #008080; /* Adjust text color if needed */
+}
+
 
 /* Login Page Styles */
 body.login-body {
