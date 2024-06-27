@@ -21,7 +21,7 @@
         <p><strong>Detail Perjalanan</strong></p>
         <div class="detail-row">
             <div class="detail-icons">
-                <img src="https://via.placeholder.com/30" alt="Icon">
+                <img src="{{ asset('asset/img/icon/otogo-icon.svg') }}" alt="Icon">
                 <p>Naik OTO Kode <strong>A1</strong> di Pintu Nol Kampus Universitas Hasanuddin</p>
             </div>
             <div class="text-right">
@@ -31,7 +31,7 @@
         <div class="dotted-line"></div>
         <div class="detail-row">
             <div class="detail-icons">
-                <img src="https://via.placeholder.com/30" alt="Icon">
+                <img src="{{ asset('asset/img/icon/otogo-icon.svg') }}" alt="Icon">
                 <p>Lanjut OTO Kode <strong>F1</strong> di Halte Mall Panakkukang</p>
             </div>
             <div class="text-right">
@@ -41,7 +41,7 @@
         <div class="dotted-line"></div>
         <div class="detail-row">
             <div class="detail-icons">
-                <img src="https://via.placeholder.com/30" alt="Icon">
+                <img src="{{ asset('asset/img/icon/otogo-icon.svg') }}" alt="Icon">
                 <p>Lanjut OTO Kode <strong>B1</strong> di Halte Kampus Fakultas Teknik Universitas Hasanuddin</p>
             </div>
             <div class="text-right">

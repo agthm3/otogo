@@ -1,0 +1,195 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Public Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #343a40;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 20px;
+}
+
+h2 {
+    color: #008097;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #008097;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #006d76;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+    background-color: #fff;
+}
+
+.profile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.profile-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    color: #343a40;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-menu-item:hover {
+    background-color: #e9ecef;
+}
+
+.profile-menu-icon {
+    margin-right: 10px;
+}
+
+.sidebar {
+    display: none;
+    background-color: #f8f9fa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    background-color: #008097;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-group button:hover {
+    background-color: #006d76;
+}
+
+.route-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.route-item input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+
+/* Add or modify styles for the show page */
+.route-details {
+    margin-bottom: 20px;
+}
+
+.route-details h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.route-details h4 {
+    font-size: 1.25rem;
+}
+
+.route-details p {
+    font-size: 1rem;
+}
+
+.route-details img {
+    max-width: 100px;
+}
+
+.route-streets {
+    margin-top: 20px;
+}
+
+.route-streets .list-group-item {
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.route-streets .list-group-item:last-child {
+    border-bottom: none;
+}

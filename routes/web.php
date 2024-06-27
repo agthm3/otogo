@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DirectionController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\HomeController;
@@ -25,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home.index');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::get('/driver', [DriverController::class, 'index'])->name('driver.index');
 
@@ -51,9 +54,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
