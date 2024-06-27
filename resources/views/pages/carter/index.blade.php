@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <form class="carter-form">
+    <form id="carterForm" class="carter-form">
         <div class="form-group">
             <label for="name">Nama Lengkap</label>
             <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap anda">
@@ -74,11 +74,50 @@
             </div>
         </div>
 
-        <button class="btn-custom" type="submit">SETUJU DAN BAYAR</button>
+        <button class="btn-custom-new" type="button" id="submitBtnNew">SETUJU DAN BAYAR</button>
     </form>
 </div>
 
-
-
 @endsection
 
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        console.log("Document ready");
+
+        // Adding click event listener
+        $('#submitBtnNew').on('click', function() {
+            console.log("Button clicked");
+
+            // Get form data
+            var name = $('#name').val();
+            var pickup = $('#pickup').val();
+            var destination = $('#destination').val();
+            var date = $('#date').val();
+            var carterType = $('#carterType').val();
+            var amount = $('#amount').val();
+            var phone = $('#phone').val();
+
+            console.log("Form data:", { name, pickup, destination, date, carterType, amount, phone });
+
+            // Construct WhatsApp message
+            var message = 'Nama: ' + name + 
+                          '\nTitik Jemput: ' + pickup + 
+                          '\nTitik Tujuan: ' + destination + 
+                          '\nTanggal Carter: ' + date + 
+                          '\nJenis Carter: ' + carterType + 
+                          '\nJumlah Carter: ' + amount + 
+                          '\nNomor Handphone: ' + phone;
+
+            // WhatsApp URL
+            var whatsappURL = 'https://wa.me/628123456789?text=' + encodeURIComponent(message);
+
+            console.log("WhatsApp URL:", whatsappURL);
+
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+    });
+</script>
+@endsection
