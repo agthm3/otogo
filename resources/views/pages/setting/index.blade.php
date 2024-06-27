@@ -46,6 +46,7 @@
         <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
             @csrf
         </form>
+        <p>Tertarik ikut jadi bagian driver OTOGO? <a href="{{ route("driver.index") }}">Join OTOGO Driver Sekarang!</a></p>
     </div>
 </div>
 @endsection
