@@ -27,23 +27,16 @@
         <div id="map" style="width: 100%; height: 400px;"></div>
     </div>
     <h3>Rute OTOGO</h1>
-    <div class="oto-card">
-        <div class="oto-card-content">
-            <h5>OTO - F1</h5>
-            <p>Malengkeri Kampus Unhas</p>
-            <a href="{{ route('payment.index') }}"> <button class="btn btn-light">Pilih</button></a>
+        @foreach ($latestRoutes as $route)
+        <div class="oto-card" style="background-color: {{ $route->route_color }}">
+            <div class="oto-card-content">
+                <h5>{{ $route->name }}</h5>
+                <p>{{ $route->streets->first()->name }} - {{ $route->streets->last()->name }}</p>
+                <a href="{{ route('direction.show', $route->id) }}"><button class="btn btn-light">Pilih</button></a>
+            </div>
+            <img src="{{ asset('asset/img/otogo-mobil.svg') }}" alt="Kendaraan">
         </div>
-        <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
-    </div>
-
-    <div class="oto-card">
-        <div class="oto-card-content">
-            <h5>OTO - E1</h5>
-            <p>Terminal Panakkukang Kampus Unhas</p>
-            <button class="btn btn-light">Pilih</button>
-        </div>
-        <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
-    </div>
+        @endforeach
 </div>
 
 <script>

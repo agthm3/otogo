@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\home;
 use App\Http\Controllers\Controller;
+use App\Models\Route;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home.home');
+        $latestRoutes = Route::orderBy('created_at', 'desc')->take(5)->get();
+        return view('pages.home.home', compact('latestRoutes'));
     }
 
     /**
