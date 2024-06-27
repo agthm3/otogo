@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('route_street', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
+            $table->foreignId('street_id')->constrained('streets')->onDelete('cascade');
             $table->timestamps();
         });
     }

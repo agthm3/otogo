@@ -7,6 +7,7 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RouteController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TicketController;
 use App\Models\home;
@@ -28,8 +29,16 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-Route::get('/jalur', [DashboardController::class, 'showJalur'])->name('jalur.index');
-Route::get('/jalur/create', [DashboardController::class,'createJalur'])->name('jalur.create');
+// Route::get('/jalur', [DashboardController::class, 'showJalur'])->name('jalur.index');
+// Route::get('/jalur/create', [DashboardController::class,'createJalur'])->name('jalur.create');
+Route::get('jalur', [RouteController::class, 'index'])->name('jalur.index');
+Route::get('jalur/create', [RouteController::class, 'create'])->name('jalur.create');
+Route::post('jalur', [RouteController::class, 'store'])->name('jalur.store');
+Route::get('jalur/{id}', [RouteController::class, 'show'])->name('jalur.show');
+Route::get('jalur/{id}/edit', [RouteController::class, 'edit'])->name('jalur.edit');
+Route::put('jalur/{id}', [RouteController::class, 'update'])->name('jalur.update');
+Route::delete('jalur/{id}', [RouteController::class, 'destroy'])->name('jalur.destroy');
+
 Route::get('/pending-driver',[DashboardController::class, 'showPendingDriver'])->name('pending.index');
 Route::get('/all-driver', [DashboardController::class,'showAllDriver'])->name('allDriver.index');
 Route::get('/report-driver',[DashboardController::class, 'showReportDriver'])->name('reportDriver.index');
