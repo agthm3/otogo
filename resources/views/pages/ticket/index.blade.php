@@ -29,6 +29,6 @@
             </div>
         </div>
       </a>
-        <button class="btn-custom">BELI TIKET</button>
+       
     </div>
 @endsection
