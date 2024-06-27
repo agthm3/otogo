@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarterController;
 use App\Http\Controllers\DirectionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
@@ -34,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/direction', [DirectionController::class, 'index'])->name('direction.index');
     Route::get('/direction/show', [DirectionController::class, 'show'])->name('direction.show');
+
+    Route::get('/carter', [CarterController::class, 'index'])->name('carter.index');
 });
 
 

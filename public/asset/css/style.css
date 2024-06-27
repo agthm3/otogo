@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     background-color: #f8f9fa;
-    padding-bottom: 70px;
+    padding-bottom: 70px; /* Tambahkan padding bawah pada body */
     margin: 0;
 }
 .container {
@@ -17,15 +17,15 @@ body {
 
 .header h4, .header h2 {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 20px; /* Atur jarak dari tepi kiri sesuai kebutuhan */
     font-family: 'Public Sans', sans-serif;
-    font-weight: 700;
+    font-weight: 700; /* Bold weight */
 }
 .header img {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    max-width: 70px;
+    max-width: 70px; /* Perbesar ukuran logo */
 }
 .nav-bar {
     background-color: white;
@@ -74,7 +74,7 @@ body.login-body {
     max-width: 200px;
     position: absolute;
     right: -20px;
-    top: 10px;
+    top: 10px; /* Adjust as needed to position it above the button */
 }
 .login-container .btn {
     background-color: white;
@@ -83,7 +83,7 @@ body.login-body {
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 150px; /* Ensure there is space between button and vehicle */
 }
 .login-container .btn:hover {
     background-color: #f8f9fa;
@@ -102,9 +102,9 @@ body.login-body {
     background-color: white;
     padding: 1rem;
     margin: 1rem 0;
-    border-radius: 8px;
+    border-radius: 8px; /* Menambahkan border-radius */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Menambahkan border di semua sisi */
 }
 
 .card-custom p {
@@ -324,34 +324,6 @@ body.login-body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.route-card {
-    background-color: white;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-}
-
-.route-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.route-badge {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-right: 1rem;
-    text-align: center;
-    font-size: 1.2rem;
-}
 
 /* Carter */
 
@@ -368,7 +340,7 @@ body.login-body {
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Tambahkan ini untuk memungkinkan wrapping */
 }
 
 .tarif-item {
@@ -376,7 +348,7 @@ body.login-body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 48%;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Tambahkan ini untuk jarak antar elemen saat wrapping */
     overflow: hidden;
 }
 
@@ -438,13 +410,67 @@ body.login-body {
 /* Media Query untuk Mobile */
 @media (max-width: 768px) {
     .tarif-item {
-        width: 100%;
-        margin-bottom: 1rem;
+        width: 100%; /* Lebar penuh di mobile */
+        margin-bottom: 1rem; /* Jarak antar elemen */
     }
     .tarif-header img {
-        position: static;
+        position: static; /* Mengatur posisi gambar menjadi statis */
         display: block;
-        margin: 0 auto;
-        width: 90px;
+        margin: 0 auto; /* Menjadikan gambar berada di tengah */
+        width: 90px; /* Sesuaikan ukuran jika perlu */
+     
     }
 }
+
+/* Tambahan untuk Route Styles */
+.route-badge {
+    width: 60px; /* Atur ukuran yang sama untuk semua badge */
+    height: 60px; /* Atur ukuran yang sama untuk semua badge */
+    flex-shrink: 0; /* Pastikan kotak tidak mengecil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1.2rem; /* Ukuran font */
+}
+
+/* Custom Route Styles */
+.custom-route-card {
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.custom-route-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-route-badge {
+    width: 60px; /* Ukuran yang sama untuk semua badge */
+    height: 60px; /* Ukuran yang sama untuk semua badge */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1.2rem; /* Ukuran font */
+    flex-shrink: 0; /* Pastikan kotak tidak mengecil */
+}
+
+.custom-route-content p {
+    margin: 0; /* Hilangkan margin default pada paragraf */
+    font-size: 1rem; /* Ukuran font untuk teks */
+}
+
+

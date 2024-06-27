@@ -63,8 +63,8 @@
             <input type="number" class="form-control" id="amount" placeholder="Jumlah Carter">
         </div>
         <div class="form-group">
-            <label for="amount">Nomor Handphone</label>
-            <input type="number" class="form-control" id="amount" placeholder="Masukkan nomor Whatsapp">
+            <label for="phone">Nomor Handphone</label>
+            <input type="number" class="form-control" id="phone" placeholder="Masukkan nomor Whatsapp">
         </div>
 
         <div class="card">
@@ -74,34 +74,11 @@
             </div>
         </div>
 
-        <button  id="payBtn" class="btn-custom ">Pesan Carter OTOGO</button>
+        <button class="btn-custom" type="submit">SETUJU DAN BAYAR</button>
     </form>
 </div>
 
-<!-- Modal -->
-<div class="modal-custom" id="paymentModal">
-    <div class="modal-header">
-        <h5>Metode Pembayaran</h5>
-        <button type="button" class="close" id="closeModal">&times;</button>
-    </div>
-    <div class="modal-body">
-        <button class="btn btn-primary">QRIS</button>
-        <button class="btn btn-primary">CASH</button>
-        <button class="btn btn-secondary" id="cancelBtn">BATAL</button>
-    </div>
-</div>
 
-
-<script>
-    $(document).ready(function() {
-        $('#payBtn').click(function() {
-            $('#paymentModal').slideDown();
-        });
-
-        $('#closeModal, #cancelBtn').click(function() {
-            $('#paymentModal').slideUp();
-        });
-    });
-</script>
 
 @endsection
+

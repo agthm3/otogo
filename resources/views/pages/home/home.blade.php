@@ -17,7 +17,7 @@
         <div class="oto-card-content">
             <h5>Butuh Carter OTOGO?</h5>
             <p>Carter OTOGO dengan mudah dan cepat untuk kegiatan kamu.</p>
-            <a href="{{ route('payment.index') }}"> <button class="btn btn-light">Pilih</button></a>
+            <a href="{{ route('carter.index') }}"> <button class="btn btn-light">Pilih</button></a>
         </div>
         <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
     </div>
