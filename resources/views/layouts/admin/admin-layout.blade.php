@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>OTOGO- Dashboard </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('asset/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('asset/vendor/owl-carousel/css/owl.carousel.min.css') }}">
@@ -211,8 +211,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p> 
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">OTOGO</a> 2024</p>A
             </div>
         </div>
         <!--**********************************

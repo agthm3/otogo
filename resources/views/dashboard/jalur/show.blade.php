@@ -1,5 +1,6 @@
 @extends('layouts.admin.admin-layout')
 
+
 @section('content')
 <div class="content-body">
     <div class="container-fluid">
@@ -11,33 +12,28 @@
                         <h4 class="card-title">Detail Jalur</h4>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label>Nama Jalur</label>
-                            <p>{{ $route->name }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label>Kode Jalur</label>
-                            <p>{{ $route->route_code }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label>Kode Warna</label>
-                            <span class="badge" style="background-color: {{ $route->route_color }}">{{ $route->route_color }}</span>
-                        </div>
-                        <div class="form-group">
-                            <label>Deskripsi</label>
-                            <p>{{ $route->description }}</p>
-                        </div>
-                        <div class="form-group">
-                            <label>Logo</label>
-                            <img src="{{ asset('storage/'.$route->logo) }}" alt="{{ $route->name }}" width="100">
-                        </div>
-                        <h5>Jalan-jalan</h5>
+                        <p><strong>Nama Jalur:</strong> {{ $route->name }}</p>
+                        <p><strong>Kode Jalur:</strong> {{ $route->route_code }}</p>
+                        <p><strong>Warna Jalur:</strong> <span class="badge badge-primary" style="background-color: {{ $route->route_color }};">{{ $route->route_color }}</span></p>
+                        <p><strong>Deskripsi:</strong> {{ $route->description }}</p>
+                        <h5>Jalur Keberangkatan:</h5>
                         <ul>
-                            @foreach($route->streets as $street)
-                            <li>{{ $street->name }}</li>
+                            @foreach($departStreets as $street)
+                                <li>{{ $street->name }}</li>
                             @endforeach
                         </ul>
-                        <a href="{{ route('jalur.index') }}" class="btn btn-secondary">Kembali</a>
+                        <h5>Jalur Kembali:</h5>
+                        <ul>
+                            @foreach($returnStreets as $street)
+                                <li>{{ $street->name }}</li>
+                            @endforeach
+                        </ul>
+                        <a href="{{ route('jalur.edit', $route->id) }}" class="btn btn-secondary">Edit</a>
+                        <form action="{{ route('jalur.destroy', $route->id) }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus jalur ini?')">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>

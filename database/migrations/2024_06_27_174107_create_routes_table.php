@@ -4,12 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateRoutesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
@@ -17,16 +14,12 @@ return new class extends Migration
             $table->string('route_code');
             $table->string('route_color');
             $table->text('description')->nullable();
-            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('routes');
     }
-};
+}

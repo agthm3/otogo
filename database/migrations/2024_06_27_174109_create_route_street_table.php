@@ -6,22 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('route_street', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
-            $table->foreignId('street_id')->constrained('streets')->onDelete('cascade');
+            $table->unsignedBigInteger('route_id');
+            $table->unsignedBigInteger('street_id');
+            $table->enum('type', ['depart', 'return']);
             $table->timestamps();
+
+            $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
+            $table->foreign('street_id')->references('id')->on('streets')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('route_street');

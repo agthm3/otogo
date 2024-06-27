@@ -5,8 +5,8 @@
     <div class="detail-card">
         <h5>Rute OTOGO</h5>
         <div class="route-overview">
-            <p><i class="fas fa-map-marker-alt" style="color: #007bff;"></i> Terminal Daya</p>
-            <p><i class="fas fa-map-marker-alt" style="color: #dc3545;"></i> Pasar Butung</p>
+            <p><i class="fas fa-map-marker-alt" style="color: #007bff;"></i> {{ $departStreets->first()->name }}</p>
+            <p><i class="fas fa-map-marker-alt" style="color: #dc3545;"></i> {{ $returnStreets->last()->name }}</p>
         </div>
     </div>
 
@@ -16,23 +16,17 @@
             <div class="route-section">
                 <h6><i class="fas fa-circle" style="color: #28a745;"></i> Rute Berangkat</h6>
                 <ul>
-                    <li>Terminal Panaikang</li>
-                    <li>Urip Sumoharjo</li>
-                    <li>Taman Makam Pahlawan</li>
-                    <li>Adiyaksa</li>
-                    <li>Terminal Panakkukang</li>
-                    <li>Toddopuli Raya</li>
+                    @foreach ($departStreets as $street)
+                    <li>{{ $street->name }}</li>
+                    @endforeach
                 </ul>
             </div>
             <div class="route-section">
                 <h6><i class="fas fa-circle" style="color: #dc3545;"></i> Rute Kembali</h6>
                 <ul>
-                    <li>Toddopuli Raya</li>
-                    <li>Emmy Saelan</li>
-                    <li>Sultan Alauddin</li>
-                    <li>Adiyaksa</li>
-                    <li>Terminal Panakkukang</li>
-                    <li>Toddopuli Raya</li>
+                    @foreach ($returnStreets as $street)
+                    <li>{{ $street->name }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>

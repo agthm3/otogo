@@ -1,5 +1,6 @@
 @extends('layouts.admin.admin-layout')
 
+
 @section('content')
 <div class="content-body">
     <div class="container-fluid">
@@ -19,24 +20,24 @@
                                         <th>No</th>
                                         <th>Nama Jalur</th>
                                         <th>Kode Warna</th>
-                                        <th>Kode Jalur</th>
+                                        <th>Koder Jalur</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($routes as $route)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <th>{{ $loop->iteration }}</th>
                                         <td>{{ $route->name }}</td>
-                                        <td><span class="badge" style="background-color: {{ $route->route_color }}">{{ $route->route_color }}</span></td>
+                                        <td><span class="badge badge-primary" style="background-color: {{ $route->route_color }};">{{ $route->route_color }}</span></td>
                                         <td>{{ $route->route_code }}</td>
                                         <td>
-                                            <a href="{{ route('jalur.show', $route->id) }}" class="btn btn-info">Detail</a>
-                                            <a href="{{ route('jalur.edit', $route->id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ route('jalur.show', $route->id) }}" class="btn btn-primary">Detail</a>
+                                            <a href="{{ route('jalur.edit', $route->id) }}" class="btn btn-secondary">Edit</a>
                                             <form action="{{ route('jalur.destroy', $route->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus jalur ini?')">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

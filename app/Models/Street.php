@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +13,6 @@ class Street extends Model
 
     public function routes()
     {
-        return $this->belongsToMany(Route::class, 'route_street');
+        return $this->belongsToMany(Route::class, 'route_street')->withPivot('type');
     }
 }

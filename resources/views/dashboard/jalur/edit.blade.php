@@ -12,33 +12,32 @@
                         <h4 class="card-title">Edit Jalur</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('jalur.update', $route->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('jalur.update', $route->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="routeName">Nama Jalur</label>
-                                <input type="text" class="form-control" id="routeName" name="name" value="{{ $route->name }}" required>
+                                <label for="name">Nama Jalur</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ $route->name }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="routeCode">Kode Jalur</label>
-                                <input type="text" class="form-control" id="routeCode" name="route_code" value="{{ $route->route_code }}" required>
+                                <label for="route_code">Kode Jalur</label>
+                                <input type="text" class="form-control" id="route_code" name="route_code" value="{{ $route->route_code }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="routeColor">Kode Warna</label>
-                                <input type="color" class="form-control" id="routeColor" name="route_color" value="{{ $route->route_color }}" required>
+                                <label for="route_color">Warna Jalur</label>
+                                <input type="color" class="form-control" id="route_color" name="route_color" value="{{ $route->route_color }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="routeDescription">Deskripsi</label>
-                                <textarea class="form-control" id="routeDescription" name="description" rows="3">{{ $route->description }}</textarea>
+                                <label for="description">Deskripsi</label>
+                                <textarea class="form-control" id="description" name="description" rows="3">{{ $route->description }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="routeLogo">Logo Jalur</label>
-                                <input type="file" class="form-control-file" id="routeLogo" name="logo">
-                                <img src="{{ asset('storage/'.$route->logo) }}" alt="{{ $route->name }}" width="100">
+                                <label for="depart">Jalur Keberangkatan</label>
+                                <input type="text" class="form-control" id="depart" name="depart" value="{{ implode(', ', $departStreets) }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="streets">Nama Jalan</label>
-                                <input type="text" class="form-control" id="streets" name="streets" value="{{ $route->streets->pluck('name')->implode(', ') }}">
+                                <label for="return">Jalur Kembali</label>
+                                <input type="text" class="form-control" id="return" name="return" value="{{ implode(', ', $returnStreets) }}" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>

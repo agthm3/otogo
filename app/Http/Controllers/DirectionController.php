@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\direction;
 use App\Http\Controllers\Controller;
+use App\Models\Route;
 use Illuminate\Http\Request;
 
 class DirectionController extends Controller
@@ -13,7 +14,8 @@ class DirectionController extends Controller
      */
     public function index()
     {
-        return view('pages.directions.index');
+        $routes = Route::all();
+        return view('pages.directions.index', compact('routes'));
     }
 
     /**
@@ -35,9 +37,16 @@ class DirectionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(direction $direction)
+    public function show($id)
     {
-        return view('pages.directions.show');
+        $route = Route::with(['streets' => function($query) {
+            $query->orderBy('pivot_type');
+        }])->findOrFail($id);
+
+        $departStreets = $route->streets->where('pivot.type', 'depart');
+        $returnStreets = $route->streets->where('pivot.type', 'return');
+
+        return view('pages.directions.show', compact('route', 'departStreets', 'returnStreets'));
     }
 
     /**
