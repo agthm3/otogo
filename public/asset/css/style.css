@@ -625,3 +625,8 @@ body.login-body {
 .profile-form .btn:hover {
     background-color: #007a85;
 }
+
+/* Ensure the form does not affect the layout */
+#logout-form {
+    display: none;
+}

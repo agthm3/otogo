@@ -2,10 +2,8 @@
 
 @section('content')
 <div class="container">
-  
-
     <div class="profile-menu">
-        <a href="" class="profile-menu-item">
+        <a href="{{ route('account.index') }}" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-user-edit"></i>
             </div>
@@ -13,7 +11,7 @@
                 Ubah Profil
             </div>
         </a>
-        <a href="" class="profile-menu-item">
+        <a href="{{ route('panduan.index') }}" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-book"></i>
             </div>
@@ -21,7 +19,7 @@
                 Panduan
             </div>
         </a>
-        <a href="" class="profile-menu-item">
+        <a href="{{ route('qna.index') }}" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-question-circle"></i>
             </div>
@@ -29,7 +27,7 @@
                 Pertanyaan Umum
             </div>
         </a>
-        <a href="{{ route('logout') }}" class="profile-menu-item">
+        <a href="#" onclick="document.getElementById('logout-form').submit();" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-sign-out-alt"></i>
             </div>
@@ -37,6 +35,9 @@
                 Keluar Akun
             </div>
         </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
+            @csrf
+        </form>
     </div>
 </div>
 @endsection
