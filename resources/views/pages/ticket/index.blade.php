@@ -11,6 +11,7 @@
                 <a class="nav-link" id="riwayat-tab" data-toggle="tab" href="#riwayat" role="tab" aria-controls="riwayat" aria-selected="false">Riwayat</a>
             </li>
         </ul>
+      <a href="{{ route('ticket.show') }}" class="text-decoration-none" style="color: black">
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="aktif" role="tabpanel" aria-labelledby="aktif-tab">
                 <div class="ticket-card">
@@ -27,6 +28,7 @@
                 </div>
             </div>
         </div>
+      </a>
         <button class="btn-custom">BELI TIKET</button>
     </div>
 @endsection

@@ -37,7 +37,7 @@ class TicketController extends Controller
      */
     public function show(ticket $ticket)
     {
-        //
+        return view('pages.ticket.show');
     }
 
     /**

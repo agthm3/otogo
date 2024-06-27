@@ -19,12 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home.index');
+    return view('pages.ticket.show');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
+Route::get('/ticket/show', [TicketController::class, 'show'])->name('ticket.show');
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
 Route::get('/payment/show', [PaymentController::class, 'show'])->name('payment.show');
