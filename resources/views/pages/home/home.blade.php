@@ -39,15 +39,42 @@
 
 <script>
     function initMap() {
-        var makassar = {lat: -5.147665, lng: 119.432732};
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 13,
+                    center: userLocation
+                });
+                var marker = new google.maps.Marker({
+                    position: userLocation,
+                    map: map
+                });
+            }, function() {
+                handleLocationError(true, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, map.getCenter());
+        }
+    }
+
+    function handleLocationError(browserHasGeolocation, pos) {
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13,
-            center: makassar
+            center: pos
         });
-        var marker = new google.maps.Marker({
-            position: makassar,
-            map: map
+        var infoWindow = new google.maps.InfoWindow({
+            map: map,
+            position: pos,
+            content: browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.'
         });
+        map.setCenter(pos);
     }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vzGJ4DY0OHXua-pNShCOM7bhSJXmnuk&callback=initMap"></script>
