@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home.index');
+    return view('pages.directions.index');
 });
 
 Route::middleware(['auth'])->group(function () {

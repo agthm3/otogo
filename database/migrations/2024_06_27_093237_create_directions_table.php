@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('directions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('route_id');
-            $table->string('from');
-            $table->string('to');
-            $table->string('time');
-            $table->enum('payment_method', ['cash','qris'])->default('cash');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('directions');
     }
 };

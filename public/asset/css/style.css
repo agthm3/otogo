@@ -323,3 +323,39 @@ body.login-body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+.route-card {
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.route-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.route-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Atur lebar yang sama untuk semua badge */
+    height: 50px; /* Atur tinggi yang sama untuk semua badge */
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1.2rem; /* Ukuran font */
+}
+
+
+.route-card p {
+    margin: 0;
+    font-size: 1rem;
+}

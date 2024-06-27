@@ -12,6 +12,7 @@
     <div class="login-container">
         <img src="asset/img/logo-login.svg" alt="Logo" class="logo">
         <img src="asset/img/otogo-login.svg" alt="Vehicle" class="vehicle">
+        <p  style="margin-top: 60px; margin-bottom:-90px">"Temukan cara berkeliling Kota Makassar dengan dengan nyaman, aman, cepat melalui Pete-pete OTOGO"</p>
         <a href="{{ route('login') }}" class="btn text-decoration-none">Masuk dengan akun yang sudah ada</a>
         <p>Belum punya akun? <a href="{{ route('register') }}">Registrasi disini</a></p>
     </div>

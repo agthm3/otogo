@@ -13,11 +13,20 @@
         </div>
     </div>
 
+    <div class="oto-card" style="background-color: #54BFD4">
+        <div class="oto-card-content">
+            <h5>Butuh Carter OTOGO?</h5>
+            <p>Carter OTOGO dengan mudah dan cepat untuk kegiatan kamu.</p>
+            <a href="{{ route('payment.index') }}"> <button class="btn btn-light">Pilih</button></a>
+        </div>
+        <img src="asset/img/otogo-mobil.svg" alt="Kendaraan">
+    </div>
+
     <div class="map-card">
         <h5>Peta Lokasi Anda</h5>
         <div id="map" style="width: 100%; height: 400px;"></div>
     </div>
-
+    <h3>Rute OTOGO</h1>
     <div class="oto-card">
         <div class="oto-card-content">
             <h5>OTO - F1</h5>
@@ -40,6 +49,12 @@
 <script>
     function initMap() {
         console.log("initMap called");
+        var defaultLocation = { lat: -5.147665, lng: 119.432731 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: defaultLocation
+        });
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 console.log("Geolocation success");
@@ -47,36 +62,29 @@
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 13,
-                    center: userLocation
-                });
-                var marker = new google.maps.Marker({
+                map.setCenter(userLocation);
+                new google.maps.Marker({
                     position: userLocation,
                     map: map
                 });
             }, function(error) {
                 console.log("Geolocation error: " + error.message);
-                handleLocationError(true, map.getCenter());
+                handleLocationError(true, map, defaultLocation);
             });
         } else {
             console.log("Browser doesn't support Geolocation");
-            handleLocationError(false, map.getCenter());
+            handleLocationError(false, map, defaultLocation);
         }
     }
 
-    function handleLocationError(browserHasGeolocation, pos) {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13,
-            center: pos
-        });
+    function handleLocationError(browserHasGeolocation, map, pos) {
         var infoWindow = new google.maps.InfoWindow({
-            map: map,
             position: pos,
             content: browserHasGeolocation ?
                 'Error: The Geolocation service failed.' :
                 'Error: Your browser doesn\'t support geolocation.'
         });
+        infoWindow.open(map);
         map.setCenter(pos);
     }
 </script>
