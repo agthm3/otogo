@@ -21,11 +21,11 @@
     <a href="{{ route('payment.show') }}"><div class="route-card text-decoration-none" style="color: black">
         <div class="route-row">
             <div class="route-icons">
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F1
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">A
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F
             </div>
             <div class="text-right">
                 <p>35 menit</p>
@@ -44,11 +44,11 @@
     <div class="route-card">
         <div class="route-row">
             <div class="route-icons">
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F1
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">B
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F
             </div>
             <div class="text-right">
                 <p>35 menit</p>
@@ -67,11 +67,11 @@
     <div class="route-card">
         <div class="route-row">
             <div class="route-icons">
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">D
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F1
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F
             </div>
             <div class="text-right">
                 <p>35 menit</p>
@@ -90,11 +90,11 @@
     <div class="route-card" >
         <div class="route-row">
             <div class="route-icons">
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">F
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">D
                 <i class="fas fa-chevron-right"></i>
-                <img src="otogo-icon.png" alt="Icon">
+                <img src="otogo-icon.png" alt="Icon">FF
             </div>
             <div class="text-right">
                 <p>35 menit</p>
