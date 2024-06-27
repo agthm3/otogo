@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.setting.panduan');
+    return view('pages.setting.pertanyaan');
 });
 
 Route::middleware(['auth'])->group(function () {
