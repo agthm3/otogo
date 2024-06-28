@@ -10,7 +10,7 @@
                     <div class="stat-widget-two card-body">
                         <div class="stat-content">
                             <div class="stat-text">Driver Online </div>
-                            <div class="stat-digit"> <i class="fa fa-usd"></i>8500</div>
+                            <div class="stat-digit"> <i class="fa fa-car"></i>20</div>
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
@@ -24,7 +24,7 @@
                     <div class="stat-widget-two card-body">
                         <div class="stat-content">
                             <div class="stat-text">Driver Report</div>
-                            <div class="stat-digit"> <i class="fa fa-usd"></i>650</div>
+                            <div class="stat-digit"> <i class="fa fa-document"></i>0</div>
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-danger w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>

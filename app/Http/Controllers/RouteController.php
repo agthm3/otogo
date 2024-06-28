@@ -4,16 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Route;
+use App\Models\RouteStreet;
 use App\Models\Street;
 
 class RouteController extends Controller
 {
     public function index()
     {
-        $routes = Route::all();
-        return view('dashboard.jalur.index', compact('routes'));
+        $latestRoutes = Route::with('streets')->latest()->take(5)->get();
+        return view('pages.home.index', compact('latestRoutes'));
     }
 
+    public function searchRoutesByStreet(Request $request)
+    {
+        $streetName = $request->get('street');
+        $streets = Street::where('name', 'like', '%' . $streetName . '%')->get();
+        
+        $routes = Route::whereHas('streets', function ($query) use ($streets) {
+            $query->whereIn('streets.id', $streets->pluck('id'));
+        })->with('streets')->get();
+
+        $html = '';
+        foreach ($routes as $route) {
+            $html .= '<div class="oto-card" style="background-color: ' . $route->route_color . '">';
+            $html .= '<div class="oto-card-content">';
+            $html .= '<h5>' . $route->name . '</h5>';
+            $html .= '<p>' . $route->streets->first()->name . ' - ' . $route->streets->last()->name . '</p>';
+            $html .= '<a href="' . route('direction.show', $route->id) . '"><button class="btn btn-light">Pilih</button></a>';
+            $html .= '</div>';
+            $html .= '<img src="' . asset('asset/img/otogo-mobil.svg') . '" alt="Kendaraan">';
+            $html .= '</div>';
+        }
+
+        return response()->json(['html' => $html]);
+    }
     public function create()
     {
         return view('dashboard.jalur.create');

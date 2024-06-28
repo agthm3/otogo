@@ -25,8 +25,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home.home');
+    return view('pages.home.index');
 });
+Route::get('/search-routes', [DirectionController::class, 'searchRoutes'])->name('search.routes');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 // Route::get('/jalur', [DashboardController::class, 'showJalur'])->name('jalur.index');
@@ -52,7 +53,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ticket/show', [TicketController::class, 'show'])->name('ticket.show');
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-    Route::get('/payment/show', [PaymentController::class, 'show'])->name('payment.show');
+    Route::get('/payment/show/{id}', [PaymentController::class, 'show'])->name('payment.show');
+    Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+
 
     Route::get('/direction', [DirectionController::class, 'index'])->name('direction.index');
     Route::get('/direction/{id}', [DirectionController::class, 'show'])->name('direction.show');

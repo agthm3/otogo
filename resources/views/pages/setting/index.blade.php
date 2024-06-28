@@ -47,6 +47,8 @@
             @csrf
         </form>
         <p>Tertarik ikut jadi bagian driver OTOGO? <a href="{{ route("driver.index") }}">Join OTOGO Driver Sekarang!</a></p>
+        <hr>
+        <p>Masuk sebagai admin (admin@example.com | password) <a href="{{ route('dashboard.index') }}">Dashboard</a></p>
     </div>
 </div>
 @endsection

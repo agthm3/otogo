@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Payment;
 use App\Http\Controllers\Controller;
+use App\Models\Route;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -14,6 +15,10 @@ class PaymentController extends Controller
     public function index()
     {
         return view('pages.payment.index');
+    }
+    public function success()
+    {
+        return view('pages.payment.success');
     }
 
     /**
@@ -35,10 +40,15 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payment $payment)
-    {
-        return view('pages.payment.show');
-    }
+  
+     public function show($id)
+     {
+         $route = Route::findOrFail($id);
+         $estimationTime = rand(20, 60) . ' menit';
+         $estimationPrice = rand(10000, 20000);
+ 
+         return view('pages.payment.show', compact('route', 'estimationTime', 'estimationPrice'));
+     }
 
     /**
      * Show the form for editing the specified resource.

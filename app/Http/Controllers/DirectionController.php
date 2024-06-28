@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\direction;
 use App\Http\Controllers\Controller;
 use App\Models\Route;
+use App\Models\Street;
 use Illuminate\Http\Request;
 
 class DirectionController extends Controller
@@ -17,7 +18,17 @@ class DirectionController extends Controller
         $routes = Route::all();
         return view('pages.directions.index', compact('routes'));
     }
+    public function searchRoutes(Request $request)
+    {
+        $streetName = $request->input('street_name');
+        $streets = Street::where('name', 'LIKE', '%' . $streetName . '%')->pluck('id')->toArray();
+        $routes = Route::whereHas('streets', function ($query) use ($streets) {
+            $query->whereIn('street_id', $streets);
+        })->get();
 
+        return view('pages.payment.index', compact('routes', 'streetName'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      */

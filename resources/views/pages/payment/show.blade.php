@@ -13,8 +13,11 @@
 
     <div class="route-card">
         <p><strong>Rute Rekomendasi</strong></p>
-        <p><i class="fas fa-map-marker-alt"></i> PINTU NOL Kampus UNHAS</p>
-        <p><i class="fas fa-map-marker-alt"></i> BTN Minasa Upa, Syech Yusuf, Sultan Alauddin, Andi Tonro, Kumala, Ratulangi</p>
+        <p><i class="fas fa-map-marker-alt"></i> 
+            @foreach ($route->streets as $street)
+                {{ $street->name }}{{ $loop->last ? '' : ',' }}
+            @endforeach
+        </p>
     </div>
 
     <div class="detail-card">
@@ -22,30 +25,10 @@
         <div class="detail-row">
             <div class="detail-icons">
                 <img src="{{ asset('asset/img/icon/otogo-icon.svg') }}" alt="Icon">
-                <p>Naik OTO Kode <strong>A1</strong> di Pintu Nol Kampus Universitas Hasanuddin</p>
+                <p>Naik OTO Kode <strong>{{ $route->route_code }}</strong> di Pintu Nol Kampus Universitas Hasanuddin</p>
             </div>
             <div class="text-right">
-                <p>Estimasi: 25 Menit</p>
-            </div>
-        </div>
-        <div class="dotted-line"></div>
-        <div class="detail-row">
-            <div class="detail-icons">
-                <img src="{{ asset('asset/img/icon/otogo-icon.svg') }}" alt="Icon">
-                <p>Lanjut OTO Kode <strong>F1</strong> di Halte Mall Panakkukang</p>
-            </div>
-            <div class="text-right">
-                <p>Estimasi: 25 Menit</p>
-            </div>
-        </div>
-        <div class="dotted-line"></div>
-        <div class="detail-row">
-            <div class="detail-icons">
-                <img src="{{ asset('asset/img/icon/otogo-icon.svg') }}" alt="Icon">
-                <p>Lanjut OTO Kode <strong>B1</strong> di Halte Kampus Fakultas Teknik Universitas Hasanuddin</p>
-            </div>
-            <div class="text-right">
-                <p>Estimasi: 25 Menit</p>
+                <p>Estimasi: {{ $estimationTime }}</p>
             </div>
         </div>
     </div>
@@ -53,22 +36,12 @@
     <div class="total-card">
         <div class="total-row">
             <p class="title">TOTAL TARIF</p>
-            <p class="estimate">Estimasi: Rp18.000 - 20.000</p>
+            <p class="estimate">Estimasi: Rp{{ number_format($estimationPrice, 0, ',', '.') }}</p>
         </div>
         <div class="dotted-line"></div>
         <div class="total-row">
-            <p class="title">Tarif OTO - A1</p>
-            <p class="price">Rp10.000</p>
-        </div>
-        <p>Tarif pembayaran tarif Transport Publik dilakukan di awal.</p>
-        <div class="total-row">
-            <p class="title">Tarif OTO - F1</p>
-            <p class="price">Rp5.000</p>
-        </div>
-        <p>Tarif pembayaran tarif Transport Publik dilakukan di awal.</p>
-        <div class="total-row">
-            <p class="title">Tarif OTO - B1</p>
-            <p class="price">Rp4.000</p>
+            <p class="title">Tarif OTO - {{ $route->route_code }}</p>
+            <p class="price">Rp{{ number_format($estimationPrice, 0, ',', '.') }}</p>
         </div>
         <p>Tarif pembayaran tarif Transport Publik dilakukan di awal.</p>
     </div>
@@ -82,8 +55,8 @@
             <button type="button" class="close" id="closeModal">&times;</button>
         </div>
         <div class="modal-body">
-            <button class="btn btn-primary">QRIS</button>
-            <button class="btn btn-primary">CASH</button>
+            <a href="{{ route('payment.success') }}" class="btn btn-primary">QRIS</a>
+            <a href="{{ route('payment.success') }}" class="btn btn-primary">CASH</a>
             <button class="btn btn-secondary" id="cancelBtn">BATAL</button>
         </div>
     </div>
