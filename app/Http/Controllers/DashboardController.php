@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Route;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,14 +17,16 @@ class DashboardController extends Controller
         return view('dashboard.home.index');
     }
     public function showJalur(){
-        return view('dashboard.jalur.index');
+        $routes = Route::all();
+        return view('dashboard.jalur.index', compact('routes'));
     }
     public function showPendingDriver(){
         return view('dashboard.driver.pending');
     }
 
     public function showAllDriver(){
-        return view('dashboard.driver.index');
+        $allDriver = User::where('role', 'driver')->get();
+        return view('dashboard.driver.index', compact('allDriver'));
     }
     public function showReportDriver(){
         return view('dashboard.driver.report');

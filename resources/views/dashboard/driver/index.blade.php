@@ -4,7 +4,6 @@
 <div class="content-body">
     <div class="container-fluid">
         <!-- row -->
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -18,36 +17,29 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Jalur</th>
-                                        <th>Kode Warna</th>
-                                        <th>Koder Jalur</th>
+                                        <th>Nopol</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                 @foreach ($allDriver as $item)
                                     <tr>
-                                        <th>1</th>
-                                        <td>Kolor Tea Shirt For Man</td>
-                                        <td><span class="badge badge-primary">Sale</span>
+                                        <th>{{ $item->id ?? 'N/A' }}</th>
+                                        <td>{{ $item->name ?? 'N/A' }}</td>
+                                        <td>{{ $item->nopol ?? 'N/A' }}</td>
+                                        <td>{{ $item->status ?? 'N/A' }}</td>
+                                        <td class="color-primary">
+                                            <a href="" class="btn btn-info btn-sm">View</a>
+                                            <a href="" class="btn btn-warning btn-sm">Edit</a>
+                                            <form action="" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
                                         </td>
-                                        <td>January 22</td>
-                                        <td class="color-primary">$21.56</td>
                                     </tr>
-                                    <tr>
-                                        <th>2</th>
-                                        <td>Kolor Tea Shirt For Women</td>
-                                        <td><span class="badge badge-success">Tax</span>
-                                        </td>
-                                        <td>January 30</td>
-                                        <td class="color-success">$55.32</td>
-                                    </tr>
-                                    <tr>
-                                        <th>3</th>
-                                        <td>Blue Backpack For Baby</td>
-                                        <td><span class="badge badge-danger">Extended</span>
-                                        </td>
-                                        <td>January 25</td>
-                                        <td class="color-danger">$14.85</td>
-                                    </tr>
+                                 @endforeach
                                 </tbody>
                             </table>
                         </div>

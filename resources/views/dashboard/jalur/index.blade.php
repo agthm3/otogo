@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">List Jalur</h4>
-                        <a href="{{ route('jalur.create') }}" class="btn btn-primary">+ Jalur</a>
+                        <a href="{{ route('dashboard-jalur.create') }}" class="btn btn-primary">+ Jalur</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

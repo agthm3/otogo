@@ -30,6 +30,8 @@ Route::get('/', function () {
 Route::get('/search-routes', [DirectionController::class, 'searchRoutes'])->name('search.routes');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/dashboard/jalur', [DashboardController::class, 'showJalur'])->name('dashboard-jalur.index');
+Route::get('/dashboard/jalur/create', [DashboardController::class, 'createJalur'])->name('dashboard-jalur.create');
 // Route::get('/jalur', [DashboardController::class, 'showJalur'])->name('jalur.index');
 // Route::get('/jalur/create', [DashboardController::class,'createJalur'])->name('jalur.create')
 Route::get('/jalur', [RouteController::class, 'index'])->name('jalur.index');

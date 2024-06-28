@@ -83,6 +83,10 @@
                 <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan nama lengkap">
             </div>
             <div class="form-group">
+                <label for="address">Alamat Lengkap</label>
+                <input type="text" class="form-control" name="address" id="address" placeholder="Masukkan alamat lengkap">
+            </div>
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan email">
             </div>

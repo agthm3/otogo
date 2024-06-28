@@ -177,7 +177,7 @@
                     <li><a class="has-arrow" href="{{ route('dashboard.index') }}" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                     </li>
-                    <li><a class="has-arrow" href="{{ route('jalur.index') }}" aria-expanded="false"><i
+                    <li><a class="has-arrow" href="{{ route('dashboard-jalur.index') }}" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Jalur</span></a>
                     </li>
                     <li><a class="has-arrow" href="driver.html" aria-expanded="false"><i
