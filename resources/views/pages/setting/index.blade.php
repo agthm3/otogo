@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="profile-menu">
+        @auth
         <a href="{{ route('account.index') }}" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-user-edit"></i>
@@ -11,6 +12,7 @@
                 Ubah Profil
             </div>
         </a>
+        @endauth
         <a href="{{ route('panduan.index') }}" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-book"></i>
