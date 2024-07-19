@@ -8,12 +8,25 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@700&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .login-link {
+            color: white; /* Warna teks merah */
+            text-decoration: none; /* Hilangkan garis bawah tautan */
+        }
+    </style>
 </head>
 <body>
 
     <div class="header">
         <h4>Aga Kareba!</h4>
-        <h2>{{ Auth::user()->name }}</h2>
+        <h2>
+            @if(Auth::check())
+                {{ Auth::user()->name }}
+            @else
+                <span style="color: yellow;">Login untuk mengakses fitur lengkap</span>
+                <a href="{{ route('login') }}" class="login-link">(Login)</a>
+            @endif
+        </h2>
         <img src="{{ asset('asset/img/logo/logo-navbar.png') }}" alt="Logo">
     </div>
 

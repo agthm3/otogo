@@ -2,6 +2,14 @@
 
 @section('content')
 <div class="container">
+    <div class="oto-card" style="background-color: ">
+        <div class="oto-card-content">
+            <h5>Carter Otogo</h5>
+            <p>yukuykt</p>
+            <a href=""><button class="btn btn-light">Pilih</button></a>
+        </div>
+        <img src="{{ asset('asset/img/otogo-mobil.svg') }}" alt="Kendaraan">
+    </div>
     <div class="destination-card">
         <h5>Mau Kemana Hari ini?</h5>
         <p>Pilih destinasi kamu dibawah ini.</p>

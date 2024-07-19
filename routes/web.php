@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home.index');
-});
+// Route::get('/', function () {
+//     return view('pages.home.index');
+// });
 Route::get('/search-routes', [DirectionController::class, 'searchRoutes'])->name('search.routes');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
@@ -45,31 +45,22 @@ Route::delete('/jalur/{id}', [RouteController::class, 'destroy'])->name('jalur.d
 Route::get('/pending-driver',[DashboardController::class, 'showPendingDriver'])->name('pending.index');
 Route::get('/all-driver', [DashboardController::class,'showAllDriver'])->name('allDriver.index');
 Route::get('/report-driver',[DashboardController::class, 'showReportDriver'])->name('reportDriver.index');
-
 Route::get('/driver', [DriverController::class, 'index'])->name('driver.index');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/direction', [DirectionController::class, 'index'])->name('direction.index');
+Route::get('/direction/{id}', [DirectionController::class, 'show'])->name('direction.show');
+Route::get('/carter', [CarterController::class, 'index'])->name('carter.index');
+Route::get('/setting', [SettingController::class, 'index'])->name('setting.index'); 
+Route::get('/panduan', [SettingController::class, 'showPanduan'])->name('panduan.index');
+Route::get('/qna', [SettingController::class, 'showQna'])->name('qna.index');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-
     Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
     Route::get('/ticket/show', [TicketController::class, 'show'])->name('ticket.show');
-
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
     Route::get('/payment/show/{id}', [PaymentController::class, 'show'])->name('payment.show');
     Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
-
-
-    Route::get('/direction', [DirectionController::class, 'index'])->name('direction.index');
-    Route::get('/direction/{id}', [DirectionController::class, 'show'])->name('direction.show');
-
-    Route::get('/carter', [CarterController::class, 'index'])->name('carter.index');
-
-    Route::get('/setting', [SettingController::class, 'index'])->name('setting.index'); 
-    Route::get('/panduan', [SettingController::class, 'showPanduan'])->name('panduan.index');
-    Route::get('/qna', [SettingController::class, 'showQna'])->name('qna.index');
     Route::get('/account', [SettingController::class, 'showAccount'])->name('account.index');
-
-    
 });
 
 

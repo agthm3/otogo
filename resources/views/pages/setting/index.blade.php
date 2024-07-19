@@ -35,6 +35,7 @@
                 Feedback
             </div>
         </a>
+        @auth
         <a href="#" onclick="document.getElementById('logout-form').submit();" class="profile-menu-item">
             <div class="profile-menu-icon">
                 <i class="fas fa-sign-out-alt"></i>
@@ -43,6 +44,7 @@
                 Keluar Akun
             </div>
         </a>
+        @endauth
         <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
             @csrf
         </form>
