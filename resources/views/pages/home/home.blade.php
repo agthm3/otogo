@@ -5,8 +5,8 @@
     <div class="oto-card" style="background-color: ">
         <div class="oto-card-content">
             <h5>Carter Otogo</h5>
-            <p>yukuykt</p>
-            <a href=""><button class="btn btn-light">Pilih</button></a>
+            <p>Carter Angkot dengan lebih mudah dan cepat</p>
+            <a href="{{ route('carter.index') }}"><button class="btn btn-light">Carter Sekarang</button></a>
         </div>
         <img src="{{ asset('asset/img/otogo-mobil.svg') }}" alt="Kendaraan">
     </div>
